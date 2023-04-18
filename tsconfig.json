@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "CommonJS",
+        "lib": [
+            "ESNext",
+            "dom"
+        ],
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "noEmit": true,
+        "baseUrl": ".",
+        "outDir": "dist",
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true,
+        "typeRoots": [
+            "./node_modules/@types"
+        ]
+    },
+    "exclude": [
+        "./*.js",
+        "node_modules",
+        "cdk.out"
+    ]
+}

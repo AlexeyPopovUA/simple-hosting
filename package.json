@@ -1,0 +1,29 @@
+{
+  "name": "simple-hosting",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rm -rf ./cdk.out",
+    "cdk-synth-stacks": "cdk synth",
+    "cdk-diff-stacks": "cdk diff",
+    "deploy": "cdk deploy simple-hosting-*",
+    "lint": "eslint . --ext .ts",
+    "type-check": "tsc",
+    "update-dependencies": "npx npm-check-updates -u --packageFile package.json"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "aws-cdk": "^2.75.0",
+    "aws-cdk-lib": "^2.75.0",
+    "constructs": "^10.2.0",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
