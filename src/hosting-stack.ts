@@ -93,7 +93,7 @@ export class HostingStack extends Stack {
                 certificate,
                 minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2021,
                 enableLogging: false,
-                enabled: false,
+                enabled: true,
                 errorResponses: [
                     {
                         ttl: Duration.seconds(0),
