@@ -121,7 +121,7 @@ export class HostingStack extends Stack {
                     origin: new S3Origin(props.originBucket, {
                         originAccessIdentity: props.originAccessIdentity,
                         originShieldRegion: props.originBucketRegion,
-                        originPath: "/"
+                        originPath: props.originPath
                     }),
                     // CloudFront Functions
                     functionAssociations: [
@@ -163,7 +163,7 @@ export class HostingStack extends Stack {
                     origin: new S3Origin(props.originBucket, {
                         originAccessIdentity: props.originAccessIdentity,
                         originShieldRegion: props.originBucketRegion,
-                        originPath: "/master"
+                        originPath: props.originPath
                     }),
                     // CloudFront Functions
                     functionAssociations: [
