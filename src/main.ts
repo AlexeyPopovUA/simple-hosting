@@ -56,7 +56,8 @@ class Main extends App {
             originBucketRegion: configuration.HOSTING_COMMON.s3Region,
             originAccessIdentity: commonStack.originAccessIdentity,
             originPath: configuration.HOSTING_DEV.originPath,
-            isHidden: true
+            isHidden: true,
+            waf: commonStack.webAcl
         });
     }
 }

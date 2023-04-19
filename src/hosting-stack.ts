@@ -1,3 +1,4 @@
+import { resolve } from "node:path";
 import { Construct } from "constructs";
 import { Duration, Stack } from "aws-cdk-lib";
 import {AaaaRecord, ARecord, CnameRecord, HostedZone, RecordTarget } from "aws-cdk-lib/aws-route53";
@@ -20,7 +21,8 @@ import {
 import { IBucket} from "aws-cdk-lib/aws-s3";
 import { S3Origin } from "aws-cdk-lib/aws-cloudfront-origins";
 import { CloudFrontTarget } from "aws-cdk-lib/aws-route53-targets";
-import { resolve } from "node:path";
+import { CfnWebACL } from "aws-cdk-lib/aws-wafv2";
+
 
 import MinimalPropsStack from "./minimal-props-stack";
 
@@ -36,6 +38,7 @@ type CurrentStackProps = MinimalPropsStack & {
     originPath: string;
 
     isHidden: boolean;
+    waf?: CfnWebACL;
 };
 
 export class HostingStack extends Stack {
@@ -106,6 +109,7 @@ export class HostingStack extends Stack {
                     `ww.${props.domainName}`,
                     `www.${props.domainName}`
                 ],
+                webAclId: props?.waf?.attrArn,
                 defaultBehavior: {
                     allowedMethods: AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
                     cachePolicy: new CachePolicy(this, `${props.project}-cache-policy-dev`, {
