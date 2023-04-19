@@ -8,7 +8,8 @@ export default {
     },
     HOSTING_COMMON: {
         s3OriginName: `${name}-examples`,
-        s3Region: "us-east-1"
+        s3Region: "us-east-1",
+        ipv4CIDRWhiteList: []
     },
     HOSTING_DEV: {
         domain: "dev.simple-hosting.examples.oleksiipopov.com",

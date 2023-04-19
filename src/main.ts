@@ -29,7 +29,8 @@ class Main extends App {
             ...commonParams,
 
             originBucketName: configuration.HOSTING_COMMON.s3OriginName,
-            originBucketRegion: configuration.HOSTING_COMMON.s3Region
+            originBucketRegion: configuration.HOSTING_COMMON.s3Region,
+            ipv4CIDRWhiteList: configuration.HOSTING_COMMON.ipv4CIDRWhiteList
         });
 
         new HostingStack(this, `${project}-prod`, {
